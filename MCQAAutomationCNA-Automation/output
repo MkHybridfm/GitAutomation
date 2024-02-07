@@ -1,0 +1,32 @@
+
+@PodcastPageScenarios @MERADIO-4268 @Sanity @Sanity_Podcast @Sanity_Web @Regression_Web @Regression_Android @Regression_iOS @test
+Scenario Outline: Validate the Recently Played page from Podcast Library # src/test/resources/Features/MeListen/MERADIO-4255_PodCastPage.feature:166
+  Given I launch the app and log into the application                    # sg.mcqautomation.test.stepdefinition.MeListenLoginSteps.i_launch_the_app_and_log_into_the_application()
+  When I enter username as "meListen.testautomation@gmail.com"           # sg.mcqautomation.test.stepdefinition.MeListenLoginSteps.i_enter_username_as_something(java.lang.String)
+  And I enter password as "testautomation"                               # sg.mcqautomation.test.stepdefinition.MeListenLoginSteps.i_enter_password_as_something(java.lang.String)
+  And I login                                                            # sg.mcqautomation.test.stepdefinition.MeListenLoginSteps.i_login()
+  And I click on "Podcasts" from the home page                           # sg.mcqautomation.test.stepdefinition.MeListenHomeSteps.iVerifyHeaderInThePodcastsScreen(java.lang.String)
+  Then I Verify Header Page "Podcasts" is displayed                      # sg.mcqautomation.test.stepdefinition.MeListenHomeSteps.iVerifyHeaderScreenn(java.lang.String)
+  Then I Search Podcast "987 On Trend" and Select It                     # sg.mcqautomation.test.stepdefinition.MeListenPodCastSteps.SearchPodcastandSelectIt(java.lang.String)
+  Then I Play One Podcast                                                # sg.mcqautomation.test.stepdefinition.MeListenPodCastSteps.playOnePodcast()
+  And I click on "Podcasts" from the home page                           # sg.mcqautomation.test.stepdefinition.MeListenHomeSteps.iVerifyHeaderInThePodcastsScreen(java.lang.String)
+  And I Click on Podcasts Library                                        # sg.mcqautomation.test.stepdefinition.MeListenPodCastSteps.podcastLibrary()
+  And I Verify Podcasts Library                                          # sg.mcqautomation.test.stepdefinition.MeListenPodCastSteps.verifypodcastLibrary()
+  And I Click on "Recently Played" from Podcasts Library                 # sg.mcqautomation.test.stepdefinition.MeListenPodCastSteps.iclickOnhePodcastsLibraryScreen(java.lang.String)
+  Then I Verify Sort in "Recently Played"                                # sg.mcqautomation.test.stepdefinition.MeListenPodCastSteps.verifysort(java.lang.String)
+      java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at org.testng.Assert.assertTrue(Assert.java:53)
+	at sg.mcqautomation.test.stepdefinition.MeListenPodCastSteps.verifysort(MeListenPodCastSteps.java:341)
+	at ✽.I Verify Sort in "Recently Played"(file:///Users/e006365/Documents/meListen_Automation/Regression/MCQAutomationMeListen/src/test/resources/Features/MeListen/MERADIO-4255_PodCastPage.feature:157)
+
+  Then I Verify Add to Queue in "Recently Played"                        # sg.mcqautomation.test.stepdefinition.MeListenPodCastSteps.verifyAddToQueue(java.lang.String)
+  Then I Verify Download in "Recently Played"                            # sg.mcqautomation.test.stepdefinition.MeListenPodCastSteps.verifyDownload(java.lang.String)
+  Then I Verify More Option in "Recently Played"                         # sg.mcqautomation.test.stepdefinition.MeListenPodCastSteps.verifyMoreOption(java.lang.String)
+  Then I Verify Edit in "Recently Played"                                # sg.mcqautomation.test.stepdefinition.MeListenPodCastSteps.verifyEdit(java.lang.String)
+  Then I should logout                                                   # sg.mcqautomation.test.stepdefinition.MeListenLoginSteps.i_should_logout()
+
+    Embedding <B>Click on below Base64 button to See Error Screenshot</B> [image/png 139231 bytes]
+
